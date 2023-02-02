@@ -8,10 +8,10 @@ command -v bc > /dev/null || { echo "error: bc was not found. Please install bc.
 NAMESERVERS=`cat /etc/resolv.conf | grep ^nameserver | cut -d " " -f 2 | sed 's/\(.*\)/&#&/'`
 
 PROVIDERSV4="
-1.1.1.1#cloudflare_1.1.1.1
-1.0.0.1#cloudflare_1.0.0.1
-162.159.36.1#cloudflare_162.159.36.1
-162.159.46.1#cloudflare_162.159.46.1
+1.1.1.1#cloudflare-11
+1.0.0.1#cloudflare-01
+162.159.36.1#cloudflare-36
+162.159.46.1#cloudflare-46
 4.2.2.1#level3 
 8.8.8.8#google 
 9.9.9.9#quad9 
@@ -24,7 +24,7 @@ PROVIDERSV4="
 156.154.70.3#neustar 
 8.26.56.26#comodo
 45.90.28.202#nextdns
-103.174.50.18#dns_nayemador
+103.174.50.18#dns-nayemador
 "
 
 PROVIDERSV6="
@@ -75,7 +75,8 @@ totaldomains=0
 printf "%-21s" ""
 for d in $DOMAINS2TEST; do
     totaldomains=$((totaldomains + 1))
-    printf "%-8s" "test$totaldomains"
+    ## printf "%-8s" "test$totaldomains"
+    printf "%-8s" "$DOMAINS2TEST"
 done
 printf "%-8s" "Average"
 echo ""
