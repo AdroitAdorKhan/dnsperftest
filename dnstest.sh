@@ -76,7 +76,7 @@ printf "%-21s" ""
 for d in $DOMAINS2TEST; do
     totaldomains=$((totaldomains + 1))
     ## printf "%-8s" "test$totaldomains"
-    printf "%-8s" "$DOMAINS2TEST"
+    printf "%-8s" "$d"
 done
 printf "%-8s" "Average"
 echo ""
